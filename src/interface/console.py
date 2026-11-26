@@ -80,6 +80,7 @@ class Console:
             largeurs[plus_large] -= 1
 
         def formater(cellules):
+            """Aligne les cellules d'une ligne selon les largeurs."""
             return " | ".join(
                 self._tronquer(c, n).ljust(n)
                 for c, n in zip(cellules, largeurs)
