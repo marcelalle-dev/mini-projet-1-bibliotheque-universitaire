@@ -88,7 +88,9 @@ class GestionnaireJSON:
     def _ecrire_atomique(chemin, contenu):
         """Écrit ``contenu`` en JSON sans jamais corrompre ``chemin``."""
         temporaire = chemin + ".tmp"
-        with open(temporaire, "w", encoding="utf-8") as fichier:
+        # newline="\n" : fichiers identiques sous Windows, Linux et macOS.
+        with open(temporaire, "w", encoding="utf-8",
+                  newline="\n") as fichier:
             json.dump(contenu, fichier, ensure_ascii=False, indent=2)
             fichier.write("\n")
             fichier.flush()
