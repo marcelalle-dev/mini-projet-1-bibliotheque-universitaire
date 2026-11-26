@@ -29,11 +29,11 @@ from src.services import Bibliotheque
 
 VERSION_FORMAT = 1
 
-#: ``type d'objet -> (nom du fichier, clé de la liste, classe)``
+#: ``type d'objet -> (fichier, clé de la liste, classe, attribut id)``
 FICHIERS = {
-    "ouvrage": ("ouvrages.json", "ouvrages", Ouvrage),
-    "lecteur": ("lecteurs.json", "lecteurs", Lecteur),
-    "emprunt": ("emprunts.json", "emprunts", Emprunt),
+    "ouvrage": ("ouvrages.json", "ouvrages", Ouvrage, "id_ouvrage"),
+    "lecteur": ("lecteurs.json", "lecteurs", Lecteur, "id_lecteur"),
+    "emprunt": ("emprunts.json", "emprunts", Emprunt, "id_emprunt"),
 }
 
 
@@ -72,7 +72,7 @@ class GestionnaireJSON:
         try:
             os.makedirs(self.dossier, exist_ok=True)
             for type_objet, collection in collections.items():
-                _, cle, _ = FICHIERS[type_objet]
+                cle = FICHIERS[type_objet][1]
                 contenu = {
                     "version": VERSION_FORMAT,
                     "compteur": bibliotheque.compteurs[type_objet],
@@ -119,9 +119,10 @@ class GestionnaireJSON:
             "emprunt": bibliotheque.emprunts,
         }
         for type_objet, cible in cibles.items():
+            attribut_id = FICHIERS[type_objet][3]
             compteur, objets = self._charger_fichier(type_objet)
             for objet in objets:
-                cible[self._identifiant(objet)] = objet
+                cible[getattr(objet, attribut_id)] = objet
             plus_grand = max(
                 (self._numero(i) for i in cible), default=0
             )
@@ -169,7 +170,7 @@ class GestionnaireJSON:
     @staticmethod
     def _lire(type_objet, chemin):
         """Lit et valide un fichier ; lève :class:`ErreurPersistance`."""
-        _, cle, classe = FICHIERS[type_objet]
+        _, cle, classe, _ = FICHIERS[type_objet]
         try:
             with open(chemin, encoding="utf-8") as fichier:
                 contenu = json.load(fichier)
@@ -194,14 +195,6 @@ class GestionnaireJSON:
         destination = f"{chemin}.corrompu-{horodatage}"
         os.replace(chemin, destination)
         return destination
-
-    @staticmethod
-    def _identifiant(objet):
-        """Identifiant d'un ouvrage, lecteur ou emprunt."""
-        for attribut in ("id_ouvrage", "id_lecteur", "id_emprunt"):
-            if hasattr(objet, attribut):
-                return getattr(objet, attribut)
-        raise TypeError(f"Objet sans identifiant : {objet!r}")
 
     @staticmethod
     def _numero(identifiant):
