@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Outils de test / couverture
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Sauvegardes et fichiers temporaires de la persistance
+data/*.bak
+data/*.tmp
+data/*.corrompu-*
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

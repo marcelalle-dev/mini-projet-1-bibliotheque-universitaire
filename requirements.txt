@@ -1,0 +1,5 @@
+# L'application n'utilise que la bibliothèque standard de Python (>= 3.10).
+# Aucune dépendance n'est nécessaire pour l'exécuter ni pour lancer les tests.
+#
+# Outil optionnel pour vérifier la conformité PEP 8 :
+# pycodestyle>=2.11
