@@ -270,7 +270,7 @@ classDiagram
     Menu --> GestionnaireJSON
 ```
 
-Diagramme complet : [`docs/diagramme_classes.mmd`](docs/diagramme_classes.mmd)
+Diagramme complet : [`docs/diagramme_classes.md`](docs/diagramme_classes.md) (rendu GitHub), [`docs/diagramme_classes.mmd`](docs/diagramme_classes.mmd)
 et [`docs/diagramme_classes.png`](docs/diagramme_classes.png).
 
 ## Documentation
