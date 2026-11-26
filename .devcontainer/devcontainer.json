@@ -1,0 +1,14 @@
+{
+  "name": "Bibliothèque universitaire (Python 3.12)",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "python -m unittest discover -s tests -t .",
+  "postAttachCommand": "python main.py",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    },
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

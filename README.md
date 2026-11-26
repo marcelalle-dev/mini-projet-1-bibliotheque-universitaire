@@ -10,6 +10,14 @@ de bord, persistance JSON et menu en console.
 ![PEP 8](https://img.shields.io/badge/PEP%208-conforme-brightgreen)
 ![Dépendances](https://img.shields.io/badge/dépendances-aucune-lightgrey)
 
+**Site du projet :** https://marcelalle-dev.github.io/mini-projet-1-bibliotheque-universitaire/
+
+[![Ouvrir dans GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/marcelalle-dev/mini-projet-1-bibliotheque-universitaire?quickstart=1)
+
+Le bouton Codespaces lance l'application dans un terminal sur navigateur, sans
+installation (compte GitHub requis) : les tests s'exécutent à la création, puis
+le menu démarre automatiquement.
+
 ## Sommaire
 
 - [Objectifs](#objectifs)

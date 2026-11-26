@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestion d'une bibliothèque universitaire — Mini-projet 1</title>
+<meta name="description" content="Application Python orientée objet de gestion des prêts d'une bibliothèque universitaire : ouvrages, lecteurs, emprunts, pénalités, tableau de bord, persistance JSON et 62 tests unitaires.">
+<style>
+  :root {
+    --fond: #f7f8fa; --carte: #ffffff; --texte: #1d2430; --doux: #5b6677;
+    --ligne: #e2e6ec; --accent: #1f4e79; --accent-clair: #e8f0f8;
+    --code: #f1f3f6; --ok: #1a7f4b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #0f1419; --carte: #171d24; --texte: #e4e8ee; --doux: #9aa5b4;
+      --ligne: #2a323d; --accent: #7fb3e6; --accent-clair: #1c2a38;
+      --code: #1e252e; --ok: #4cc38a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--fond); color: var(--texte);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .conteneur { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--ligne); background: var(--carte); }
+  nav { display: flex; gap: 20px; align-items: center; height: 56px; }
+  nav .marque { font-weight: 650; margin-right: auto; color: var(--texte); }
+  nav a { color: var(--doux); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--accent); }
+  .hero { padding: 64px 0 40px; }
+  .surtitre { color: var(--accent); font-weight: 600; font-size: 14px;
+              letter-spacing: .04em; text-transform: uppercase; }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 10px 0 16px; }
+  .intro { font-size: 18px; color: var(--doux); max-width: 720px; margin: 0; }
+  .boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .bouton {
+    display: inline-block; padding: 10px 18px; border-radius: 8px;
+    text-decoration: none; font-weight: 600; font-size: 15px;
+    border: 1px solid var(--accent); color: var(--accent);
+  }
+  .bouton.principal { background: var(--accent); color: var(--carte); }
+  .bouton:hover { filter: brightness(1.08); }
+  .chiffres {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px; margin: 8px 0 0;
+  }
+  .chiffre { background: var(--carte); border: 1px solid var(--ligne);
+             border-radius: 10px; padding: 16px; }
+  .chiffre b { display: block; font-size: 26px; color: var(--accent);
+               font-variant-numeric: tabular-nums; }
+  .chiffre span { color: var(--doux); font-size: 14px; }
+  section { padding: 44px 0 8px; }
+  h2 { font-size: 26px; margin: 0 0 18px; }
+  h3 { font-size: 17px; margin: 0 0 6px; }
+  .grille { display: grid; gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .carte { background: var(--carte); border: 1px solid var(--ligne);
+           border-radius: 10px; padding: 18px 20px; }
+  .carte p { margin: 0; color: var(--doux); font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; background: var(--carte);
+          border: 1px solid var(--ligne); border-radius: 10px; overflow: hidden;
+          font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--ligne); }
+  th { background: var(--accent-clair); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  code, pre { font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+  pre { background: var(--code); border: 1px solid var(--ligne); border-radius: 10px;
+        padding: 16px 18px; overflow-x: auto; font-size: 14px; line-height: 1.5; margin: 0; }
+  pre code { background: none; padding: 0; }
+  .diagramme { background: #fff; border: 1px solid var(--ligne); border-radius: 10px;
+               padding: 8px; }
+  .diagramme img { width: 100%; height: auto; display: block; }
+  .note { color: var(--doux); font-size: 14px; margin-top: 10px; }
+  .etapes { counter-reset: etape; list-style: none; padding: 0; margin: 0; }
+  .etapes li { counter-increment: etape; margin-bottom: 18px; padding-left: 40px; position: relative; }
+  .etapes li::before {
+    content: counter(etape); position: absolute; left: 0; top: 0;
+    width: 28px; height: 28px; border-radius: 50%; background: var(--accent-clair);
+    color: var(--accent); font-weight: 700; display: grid; place-items: center; font-size: 14px;
+  }
+  .etapes p { margin: 0 0 8px; }
+  .ok { color: var(--ok); font-weight: 600; }
+  footer { border-top: 1px solid var(--ligne); margin-top: 56px; padding: 24px 0 40px;
+           color: var(--doux); font-size: 14px; }
+  footer a { color: var(--accent); }
+  @media (max-width: 640px) { nav a:not(.marque) { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="conteneur">
+    <nav>
+      <a class="marque" href="#">Bibliothèque universitaire</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#tests">Tests</a>
+      <a href="#essayer">Essayer</a>
+    </nav>
+  </div>
+</header>
+
+<main class="conteneur">
+  <div class="hero">
+    <div class="surtitre">Mini-projet 1 · Python orienté objet</div>
+    <h1>Gestion des prêts d'une bibliothèque universitaire</h1>
+    <p class="intro">Ouvrages et exemplaires, étudiants et enseignants, emprunts, retours,
+      prolongations, retards et pénalités, tableau de bord, persistance JSON et menu en
+      console. Bibliothèque standard Python uniquement, aucune dépendance.</p>
+    <div class="boutons">
+      <a class="bouton principal" href="https://codespaces.new/marcelalle-dev/mini-projet-1-bibliotheque-universitaire?quickstart=1">Lancer dans le navigateur (Codespaces)</a>
+      <a class="bouton" href="rapport.pdf">Rapport technique (PDF)</a>
+      <a class="bouton" href="https://github.com/marcelalle-dev/mini-projet-1-bibliotheque-universitaire">Code source sur GitHub</a>
+    </div>
+  </div>
+
+  <div class="chiffres">
+    <div class="chiffre"><b>62</b><span>tests unitaires réussis</span></div>
+    <div class="chiffre"><b>29</b><span>classes, dont 1 abstraite</span></div>
+    <div class="chiffre"><b>15</b><span>exceptions personnalisées</span></div>
+    <div class="chiffre"><b>0</b><span>avertissement PEP 8</span></div>
+  </div>
+
+  <section id="fonctionnalites">
+    <h2>Fonctionnalités</h2>
+    <div class="grille">
+      <div class="carte"><h3>Ouvrages</h3>
+        <p>Ajout, modification, suppression. Recherche par titre, auteur, catégorie ou ISBN.
+          Plusieurs exemplaires par ouvrage, disponibilité de chaque copie, clé ISBN vérifiée.</p></div>
+      <div class="carte"><h3>Lecteurs</h3>
+        <p>Classe abstraite <code>Lecteur</code> et sous-classes <code>Etudiant</code> et
+          <code>Enseignant</code> : chaque type applique ses propres règles par polymorphisme.</p></div>
+      <div class="carte"><h3>Prêts</h3>
+        <p>Emprunt avec contrôle de la disponibilité, du quota, des retards et des doublons ;
+          retour, prolongation unique, pénalité de 100 FCFA par jour de retard.</p></div>
+      <div class="carte"><h3>Tableau de bord</h3>
+        <p>Ouvrages les plus empruntés, lecteurs en retard, exemplaires disponibles et
+          empruntés, taux d'occupation du fonds, pénalités en cours.</p></div>
+      <div class="carte"><h3>Persistance JSON</h3>
+        <p>Sauvegarde automatique, écriture atomique, copie de sécurité <code>.bak</code>,
+          fichiers corrompus mis de côté et restaurés, identifiants et historique conservés.</p></div>
+      <div class="carte"><h3>Interface console</h3>
+        <p>Menu en 9 entrées, saisies contrôlées (nombres, dates, ISBN), confirmation des
+          suppressions, sauvegarde même en cas d'interruption.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Règles de gestion</h2>
+    <table>
+      <thead><tr><th>Règle</th><th>Étudiant</th><th>Enseignant</th></tr></thead>
+      <tbody>
+        <tr><td>Emprunts simultanés maximum</td><td>3</td><td>5</td></tr>
+        <tr><td>Durée d'un emprunt</td><td>14 jours</td><td>30 jours</td></tr>
+        <tr><td>Prolongation</td><td>une fois, 14 jours</td><td>une fois, 30 jours</td></tr>
+        <tr><td>Pénalité de retard</td><td>100 FCFA / jour</td><td>100 FCFA / jour</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Le jour de l'échéance n'est pas compté en retard. Un lecteur en retard ne
+      peut plus emprunter, et un prêt en retard ne peut pas être prolongé.
+      Taux d'occupation = exemplaires empruntés / total des exemplaires × 100.</p>
+  </section>
+
+  <section id="architecture">
+    <h2>Architecture et diagramme de classes</h2>
+    <div class="grille" style="margin-bottom:18px">
+      <div class="carte"><h3>Modèles</h3><p><code>Ouvrage</code>, <code>Exemplaire</code>,
+        <code>Lecteur</code>, <code>Etudiant</code>, <code>Enseignant</code>, <code>Emprunt</code></p></div>
+      <div class="carte"><h3>Services</h3><p><code>Bibliotheque</code>,
+        <code>GestionnaireEmprunts</code>, <code>TableauBord</code></p></div>
+      <div class="carte"><h3>Persistance et interface</h3><p><code>GestionnaireJSON</code>,
+        <code>Menu</code>, <code>Console</code></p></div>
+    </div>
+    <a class="diagramme" href="diagramme_classes.png" style="display:block">
+      <img src="diagramme_classes.png" alt="Diagramme de classes UML de l'application" loading="lazy">
+    </a>
+    <p class="note">Cliquer pour agrandir. Source Mermaid :
+      <a href="https://github.com/marcelalle-dev/mini-projet-1-bibliotheque-universitaire/blob/main/docs/diagramme_classes.md">diagramme_classes.md</a>.</p>
+  </section>
+
+  <section id="tests">
+    <h2>Tests</h2>
+    <table>
+      <thead><tr><th>Module</th><th class="n">Tests</th><th>Contenu</th></tr></thead>
+      <tbody>
+        <tr><td><code>test_ouvrages.py</code></td><td class="n">18</td><td>création, ISBN, recherches, exemplaires</td></tr>
+        <tr><td><code>test_lecteurs.py</code></td><td class="n">10</td><td>classe abstraite, héritage, polymorphisme, quotas</td></tr>
+        <tr><td><code>test_emprunts.py</code></td><td class="n">20</td><td>quotas, indisponibilité, retards, prolongation, pénalités</td></tr>
+        <tr><td><code>test_persistence.py</code></td><td class="n">7</td><td>sauvegarde, fichiers absents ou corrompus</td></tr>
+        <tr><td><code>test_tableau_bord.py</code></td><td class="n">7</td><td>indicateurs, menu piloté par saisies simulées</td></tr>
+        <tr><th>Total</th><th class="n">62</th><th><span class="ok">OK</span></th></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="essayer">
+    <h2>Essayer l'application</h2>
+    <ol class="etapes">
+      <li><p><strong>Dans le navigateur, sans installation :</strong> le bouton ci-dessous ouvre
+        un GitHub Codespace (compte GitHub requis). Le terminal lance le menu automatiquement ;
+        sinon tapez <code>python main.py</code>.</p>
+        <a class="bouton principal" href="https://codespaces.new/marcelalle-dev/mini-projet-1-bibliotheque-universitaire?quickstart=1">Ouvrir dans Codespaces</a></li>
+      <li><p><strong>Sur votre ordinateur</strong> (Python 3.10 ou plus récent) :</p>
+<pre><code>git clone https://github.com/marcelalle-dev/mini-projet-1-bibliotheque-universitaire.git
+cd mini-projet-1-bibliotheque-universitaire
+python main.py
+python -m unittest discover -s tests -t .</code></pre></li>
+      <li><p><strong>Données de démonstration à la date du jour :</strong></p>
+<pre><code>python scripts/generer_donnees_demo.py --force</code></pre></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="conteneur">
+    Réalisé par <strong>ALLE Sourou Marcel</strong> · Mini-projet 1 ·
+    <a href="https://github.com/marcelalle-dev/mini-projet-1-bibliotheque-universitaire">Dépôt GitHub</a> ·
+    <a href="rapport.pdf">Rapport PDF</a>
+  </div>
+</footer>
+</body>
+</html>
