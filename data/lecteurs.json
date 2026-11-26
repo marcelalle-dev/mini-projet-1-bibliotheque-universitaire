@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "compteur": 9,
+  "lecteurs": [
+    {
+      "type": "etudiant",
+      "id_lecteur": "LEC-0001",
+      "nom": "HOUNKPATIN",
+      "prenom": "Arnaud",
+      "email": "a.hounkpatin@etudiant.example.org",
+      "emprunts_actifs": [
+        "EMP-0015",
+        "EMP-0016",
+        "EMP-0022"
+      ],
+      "filiere": "Informatique",
+      "niveau": "L2"
+    },
+    {
+      "type": "etudiant",
+      "id_lecteur": "LEC-0002",
+      "nom": "DOSSOU",
+      "prenom": "Aïcha",
+      "email": "a.dossou@etudiant.example.org",
+      "emprunts_actifs": [
+        "EMP-0012"
+      ],
+      "filiere": "Mathématiques",
+      "niveau": "L3"
+    },
+    {
+      "type": "etudiant",
+      "id_lecteur": "LEC-0003",
+      "nom": "KOFFI",
+      "prenom": "Yao",
+      "email": "y.koffi@etudiant.example.org",
+      "emprunts_actifs": [
+        "EMP-0013",
+        "EMP-0014"
+      ],
+      "filiere": "Informatique",
+      "niveau": "M1"
+    },
+    {
+      "type": "etudiant",
+      "id_lecteur": "LEC-0004",
+      "nom": "AGBO",
+      "prenom": "Fréjus",
+      "email": "f.agbo@etudiant.example.org",
+      "emprunts_actifs": [
+        "EMP-0017"
+      ],
+      "filiere": "Économie",
+      "niveau": "L1"
+    },
+    {
+      "type": "etudiant",
+      "id_lecteur": "LEC-0005",
+      "nom": "SOGLO",
+      "prenom": "Mireille",
+      "email": "m.soglo@etudiant.example.org",
+      "emprunts_actifs": [
+        "EMP-0018",
+        "EMP-0025"
+      ],
+      "filiere": "Lettres modernes",
+      "niveau": "L2"
+    },
+    {
+      "type": "etudiant",
+      "id_lecteur": "LEC-0006",
+      "nom": "TRAORÉ",
+      "prenom": "Mariam",
+      "email": "m.traoré@etudiant.example.org",
+      "emprunts_actifs": [
+        "EMP-0024"
+      ],
+      "filiere": "Informatique",
+      "niveau": "L3"
+    },
+    {
+      "type": "enseignant",
+      "id_lecteur": "LEC-0007",
+      "nom": "AHOUANDJINOU",
+      "prenom": "Codjo",
+      "email": "c.ahouandjinou@enseignant.example.org",
+      "emprunts_actifs": [
+        "EMP-0011"
+      ],
+      "departement": "Informatique",
+      "grade": "Professeur titulaire"
+    },
+    {
+      "type": "enseignant",
+      "id_lecteur": "LEC-0008",
+      "nom": "ZINSOU",
+      "prenom": "Brigitte",
+      "email": "b.zinsou@enseignant.example.org",
+      "emprunts_actifs": [
+        "EMP-0020",
+        "EMP-0021"
+      ],
+      "departement": "Mathématiques",
+      "grade": "Maître de conférences"
+    },
+    {
+      "type": "enseignant",
+      "id_lecteur": "LEC-0009",
+      "nom": "GBAGUIDI",
+      "prenom": "Rodrigue",
+      "email": "r.gbaguidi@enseignant.example.org",
+      "emprunts_actifs": [
+        "EMP-0019",
+        "EMP-0023"
+      ],
+      "departement": "Économie",
+      "grade": "Maître-assistant"
+    }
+  ]
+}

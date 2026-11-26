@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "compteur": 25,
+  "emprunts": [
+    {
+      "id_emprunt": "EMP-0001",
+      "id_lecteur": "LEC-0001",
+      "id_ouvrage": "OUV-0001",
+      "id_exemplaire": "OUV-0001-E01",
+      "date_emprunt": "2026-07-29",
+      "date_retour_prevue": "2026-08-12",
+      "date_retour_effective": "2026-08-08",
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0002",
+      "id_lecteur": "LEC-0002",
+      "id_ouvrage": "OUV-0002",
+      "id_exemplaire": "OUV-0002-E01",
+      "date_emprunt": "2026-08-18",
+      "date_retour_prevue": "2026-09-01",
+      "date_retour_effective": "2026-09-07",
+      "prolonge": false,
+      "penalite_payee": 600
+    },
+    {
+      "id_emprunt": "EMP-0003",
+      "id_lecteur": "LEC-0007",
+      "id_ouvrage": "OUV-0003",
+      "id_exemplaire": "OUV-0003-E01",
+      "date_emprunt": "2026-08-28",
+      "date_retour_prevue": "2026-09-27",
+      "date_retour_effective": "2026-09-17",
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0004",
+      "id_lecteur": "LEC-0003",
+      "id_ouvrage": "OUV-0001",
+      "id_exemplaire": "OUV-0001-E01",
+      "date_emprunt": "2026-09-02",
+      "date_retour_prevue": "2026-09-16",
+      "date_retour_effective": "2026-09-27",
+      "prolonge": false,
+      "penalite_payee": 1100
+    },
+    {
+      "id_emprunt": "EMP-0005",
+      "id_lecteur": "LEC-0004",
+      "id_ouvrage": "OUV-0009",
+      "id_exemplaire": "OUV-0009-E01",
+      "date_emprunt": "2026-09-12",
+      "date_retour_prevue": "2026-09-26",
+      "date_retour_effective": "2026-09-22",
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0006",
+      "id_lecteur": "LEC-0008",
+      "id_ouvrage": "OUV-0006",
+      "id_exemplaire": "OUV-0006-E01",
+      "date_emprunt": "2026-09-17",
+      "date_retour_prevue": "2026-10-17",
+      "date_retour_effective": "2026-10-27",
+      "prolonge": false,
+      "penalite_payee": 1000
+    },
+    {
+      "id_emprunt": "EMP-0007",
+      "id_lecteur": "LEC-0001",
+      "id_ouvrage": "OUV-0002",
+      "id_exemplaire": "OUV-0002-E01",
+      "date_emprunt": "2026-09-27",
+      "date_retour_prevue": "2026-10-11",
+      "date_retour_effective": "2026-10-07",
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0008",
+      "id_lecteur": "LEC-0005",
+      "id_ouvrage": "OUV-0012",
+      "id_exemplaire": "OUV-0012-E01",
+      "date_emprunt": "2026-10-02",
+      "date_retour_prevue": "2026-10-16",
+      "date_retour_effective": "2026-10-12",
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0009",
+      "id_lecteur": "LEC-0006",
+      "id_ouvrage": "OUV-0001",
+      "id_exemplaire": "OUV-0001-E01",
+      "date_emprunt": "2026-10-07",
+      "date_retour_prevue": "2026-11-04",
+      "date_retour_effective": "2026-11-01",
+      "prolonge": true,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0010",
+      "id_lecteur": "LEC-0009",
+      "id_ouvrage": "OUV-0009",
+      "id_exemplaire": "OUV-0009-E01",
+      "date_emprunt": "2026-10-12",
+      "date_retour_prevue": "2026-11-11",
+      "date_retour_effective": "2026-11-06",
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0011",
+      "id_lecteur": "LEC-0007",
+      "id_ouvrage": "OUV-0008",
+      "id_exemplaire": "OUV-0008-E01",
+      "date_emprunt": "2026-10-17",
+      "date_retour_prevue": "2026-11-16",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0012",
+      "id_lecteur": "LEC-0002",
+      "id_ouvrage": "OUV-0001",
+      "id_exemplaire": "OUV-0001-E02",
+      "date_emprunt": "2026-10-27",
+      "date_retour_prevue": "2026-11-10",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0013",
+      "id_lecteur": "LEC-0003",
+      "id_ouvrage": "OUV-0007",
+      "id_exemplaire": "OUV-0007-E01",
+      "date_emprunt": "2026-11-01",
+      "date_retour_prevue": "2026-11-15",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0014",
+      "id_lecteur": "LEC-0003",
+      "id_ouvrage": "OUV-0002",
+      "id_exemplaire": "OUV-0002-E01",
+      "date_emprunt": "2026-11-06",
+      "date_retour_prevue": "2026-11-20",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0015",
+      "id_lecteur": "LEC-0001",
+      "id_ouvrage": "OUV-0001",
+      "id_exemplaire": "OUV-0001-E01",
+      "date_emprunt": "2026-11-14",
+      "date_retour_prevue": "2026-11-28",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0016",
+      "id_lecteur": "LEC-0001",
+      "id_ouvrage": "OUV-0003",
+      "id_exemplaire": "OUV-0003-E01",
+      "date_emprunt": "2026-11-14",
+      "date_retour_prevue": "2026-12-12",
+      "date_retour_effective": null,
+      "prolonge": true,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0017",
+      "id_lecteur": "LEC-0004",
+      "id_ouvrage": "OUV-0012",
+      "id_exemplaire": "OUV-0012-E01",
+      "date_emprunt": "2026-11-18",
+      "date_retour_prevue": "2026-12-02",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0018",
+      "id_lecteur": "LEC-0005",
+      "id_ouvrage": "OUV-0004",
+      "id_exemplaire": "OUV-0004-E01",
+      "date_emprunt": "2026-11-20",
+      "date_retour_prevue": "2026-12-04",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0019",
+      "id_lecteur": "LEC-0009",
+      "id_ouvrage": "OUV-0004",
+      "id_exemplaire": "OUV-0004-E02",
+      "date_emprunt": "2026-11-20",
+      "date_retour_prevue": "2026-12-20",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0020",
+      "id_lecteur": "LEC-0008",
+      "id_ouvrage": "OUV-0002",
+      "id_exemplaire": "OUV-0002-E02",
+      "date_emprunt": "2026-11-21",
+      "date_retour_prevue": "2026-12-21",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0021",
+      "id_lecteur": "LEC-0008",
+      "id_ouvrage": "OUV-0005",
+      "id_exemplaire": "OUV-0005-E01",
+      "date_emprunt": "2026-11-21",
+      "date_retour_prevue": "2026-12-21",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0022",
+      "id_lecteur": "LEC-0001",
+      "id_ouvrage": "OUV-0006",
+      "id_exemplaire": "OUV-0006-E01",
+      "date_emprunt": "2026-11-22",
+      "date_retour_prevue": "2026-12-06",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0023",
+      "id_lecteur": "LEC-0009",
+      "id_ouvrage": "OUV-0010",
+      "id_exemplaire": "OUV-0010-E01",
+      "date_emprunt": "2026-11-23",
+      "date_retour_prevue": "2026-12-23",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0024",
+      "id_lecteur": "LEC-0006",
+      "id_ouvrage": "OUV-0001",
+      "id_exemplaire": "OUV-0001-E03",
+      "date_emprunt": "2026-11-24",
+      "date_retour_prevue": "2026-12-08",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    },
+    {
+      "id_emprunt": "EMP-0025",
+      "id_lecteur": "LEC-0005",
+      "id_ouvrage": "OUV-0011",
+      "id_exemplaire": "OUV-0011-E01",
+      "date_emprunt": "2026-11-25",
+      "date_retour_prevue": "2026-12-09",
+      "date_retour_effective": null,
+      "prolonge": false,
+      "penalite_payee": 0
+    }
+  ]
+}

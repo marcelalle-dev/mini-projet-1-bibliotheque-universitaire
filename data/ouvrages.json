@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "compteur": 13,
+  "ouvrages": [
+    {
+      "id_ouvrage": "OUV-0001",
+      "titre": "Apprendre à programmer avec Python 3",
+      "auteur": "Gérard Swinnen",
+      "isbn": "9782100001019",
+      "categorie": "Informatique",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0001-E01",
+          "id_ouvrage": "OUV-0001",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0001-E02",
+          "id_ouvrage": "OUV-0001",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0001-E03",
+          "id_ouvrage": "OUV-0001",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0001-E04",
+          "id_ouvrage": "OUV-0001",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 4
+    },
+    {
+      "id_ouvrage": "OUV-0002",
+      "titre": "Introduction à l'algorithmique",
+      "auteur": "Thomas H. Cormen",
+      "isbn": "9782100001026",
+      "categorie": "Informatique",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0002-E01",
+          "id_ouvrage": "OUV-0002",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0002-E02",
+          "id_ouvrage": "OUV-0002",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0002-E03",
+          "id_ouvrage": "OUV-0002",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 3
+    },
+    {
+      "id_ouvrage": "OUV-0003",
+      "titre": "Coder proprement",
+      "auteur": "Robert C. Martin",
+      "isbn": "9782100001033",
+      "categorie": "Informatique",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0003-E01",
+          "id_ouvrage": "OUV-0003",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0003-E02",
+          "id_ouvrage": "OUV-0003",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 2
+    },
+    {
+      "id_ouvrage": "OUV-0004",
+      "titre": "Bases de données",
+      "auteur": "Georges Gardarin",
+      "isbn": "9782100001040",
+      "categorie": "Informatique",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0004-E01",
+          "id_ouvrage": "OUV-0004",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0004-E02",
+          "id_ouvrage": "OUV-0004",
+          "disponible": false
+        }
+      ],
+      "dernier_numero": 2
+    },
+    {
+      "id_ouvrage": "OUV-0005",
+      "titre": "Analyse : cours et exercices",
+      "auteur": "Jean-Marie Monier",
+      "isbn": "9782100001057",
+      "categorie": "Mathématiques",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0005-E01",
+          "id_ouvrage": "OUV-0005",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0005-E02",
+          "id_ouvrage": "OUV-0005",
+          "disponible": true
+        },
+        {
+          "id_exemplaire": "OUV-0005-E03",
+          "id_ouvrage": "OUV-0005",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 3
+    },
+    {
+      "id_ouvrage": "OUV-0006",
+      "titre": "Algèbre linéaire",
+      "auteur": "Joseph Grifone",
+      "isbn": "9782100001064",
+      "categorie": "Mathématiques",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0006-E01",
+          "id_ouvrage": "OUV-0006",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0006-E02",
+          "id_ouvrage": "OUV-0006",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 2
+    },
+    {
+      "id_ouvrage": "OUV-0007",
+      "titre": "Statistique et probabilités",
+      "auteur": "Jean-Pierre Lecoutre",
+      "isbn": "9782100001071",
+      "categorie": "Mathématiques",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0007-E01",
+          "id_ouvrage": "OUV-0007",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0007-E02",
+          "id_ouvrage": "OUV-0007",
+          "disponible": true
+        },
+        {
+          "id_exemplaire": "OUV-0007-E03",
+          "id_ouvrage": "OUV-0007",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 3
+    },
+    {
+      "id_ouvrage": "OUV-0008",
+      "titre": "Physique",
+      "auteur": "Eugene Hecht",
+      "isbn": "9782100001088",
+      "categorie": "Physique",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0008-E01",
+          "id_ouvrage": "OUV-0008",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0008-E02",
+          "id_ouvrage": "OUV-0008",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 2
+    },
+    {
+      "id_ouvrage": "OUV-0009",
+      "titre": "Principes de l'économie",
+      "auteur": "N. Gregory Mankiw",
+      "isbn": "9782100001095",
+      "categorie": "Économie",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0009-E01",
+          "id_ouvrage": "OUV-0009",
+          "disponible": true
+        },
+        {
+          "id_exemplaire": "OUV-0009-E02",
+          "id_ouvrage": "OUV-0009",
+          "disponible": true
+        },
+        {
+          "id_exemplaire": "OUV-0009-E03",
+          "id_ouvrage": "OUV-0009",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 3
+    },
+    {
+      "id_ouvrage": "OUV-0010",
+      "titre": "Introduction générale au droit",
+      "auteur": "François Terré",
+      "isbn": "9782100001101",
+      "categorie": "Droit",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0010-E01",
+          "id_ouvrage": "OUV-0010",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0010-E02",
+          "id_ouvrage": "OUV-0010",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 2
+    },
+    {
+      "id_ouvrage": "OUV-0011",
+      "titre": "L'Aventure ambiguë",
+      "auteur": "Cheikh Hamidou Kane",
+      "isbn": "9782100001118",
+      "categorie": "Littérature",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0011-E01",
+          "id_ouvrage": "OUV-0011",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0011-E02",
+          "id_ouvrage": "OUV-0011",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 2
+    },
+    {
+      "id_ouvrage": "OUV-0012",
+      "titre": "Une si longue lettre",
+      "auteur": "Mariama Bâ",
+      "isbn": "9782100001125",
+      "categorie": "Littérature",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0012-E01",
+          "id_ouvrage": "OUV-0012",
+          "disponible": false
+        },
+        {
+          "id_exemplaire": "OUV-0012-E02",
+          "id_ouvrage": "OUV-0012",
+          "disponible": true
+        },
+        {
+          "id_exemplaire": "OUV-0012-E03",
+          "id_ouvrage": "OUV-0012",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 3
+    },
+    {
+      "id_ouvrage": "OUV-0013",
+      "titre": "Management",
+      "auteur": "Stephen P. Robbins",
+      "isbn": "9782100001132",
+      "categorie": "Gestion",
+      "exemplaires": [
+        {
+          "id_exemplaire": "OUV-0013-E01",
+          "id_ouvrage": "OUV-0013",
+          "disponible": true
+        },
+        {
+          "id_exemplaire": "OUV-0013-E02",
+          "id_ouvrage": "OUV-0013",
+          "disponible": true
+        }
+      ],
+      "dernier_numero": 2
+    }
+  ]
+}
